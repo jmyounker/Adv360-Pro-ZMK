@@ -9,7 +9,22 @@ SELINUX1 := :z
 SELINUX2 := ,z
 endif
 
-.PHONY: all left clean_firmware clean_image clean
+.PHONY: all left clean_firmware clean_image clean berlin us
+
+
+
+
+berlin:
+	cp config/boards/arm/adv360/locations/Kconfig-berlin.defconfig config/boards/arm/adv360/Kconfig.defconfig 
+	make all
+	cp config/boards/arm/adv360/locations/Kconfig.defconfig config/boards/arm/adv360/Kconfig.defconfig 
+
+us:
+	cp config/boards/arm/adv360/locations/Kconfig-us.defconfig config/boards/arm/adv360/Kconfig.defconfig 
+	make all
+	cp config/boards/arm/adv360/locations/Kconfig.defconfig config/boards/arm/adv360/Kconfig.defconfig 
+	        
+
 
 all:
 	$(shell bin/get_version_local.sh clique >> /dev/null)
