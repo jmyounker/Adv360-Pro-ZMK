@@ -8,6 +8,14 @@
     behaviors {
       #include "macros.dtsi"
 
+     /* Modularize this later */
+     #define HYP(key) LS(LC(LA(LG(key))))
+     #define HYPER    LS(LC(LA(LGUI)))
+     #define ME(key)  LS(LC(LG(key))
+     #define MEH      LS(LC(LGUI))
+     #define MH(key)  LS(LA(LG(key))
+     #define MHA      LS(LA(LGUI))
+
       hm: homerow_mods {
           compatible = "zmk,behavior-hold-tap";
           label = "HOMEROW_MODS";
@@ -42,9 +50,9 @@
     };
     fn {
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6  &kp ESC                                         &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
+        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp ESC                                          &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+        &trans &trans &trans &trans &trans &trans &none                                            &none &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans &none        &trans &trans &trans &trans         &none &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
