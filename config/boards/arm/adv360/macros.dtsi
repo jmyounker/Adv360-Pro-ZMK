@@ -34,3 +34,12 @@
     #binding-cells = <0>;
     bindings = <&kp K>, <&kp I>, <&kp N>, <&kp E>, <&kp S>, <&kp I>, <&kp S>;
   };
+
+/** Composite modifier keys **/
+
+#define HYP(key) LS(LC(LA(LG(key))))
+#define HYPER    LS(LC(LA(LGUI)))
+#define ME(key)  LS(LC(LG(key))
+#define MEH      LS(LC(LGUI))
+#define MH(key)  LS(LA(LG(key))
+#define MHA      LS(LA(LGUI))
