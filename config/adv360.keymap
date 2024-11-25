@@ -22,6 +22,8 @@
      #define HYPER    LS(LC(LA(LGUI)))
      #define ME(key)  LS(LC(LG(key))
      #define MEH      LS(LC(LGUI))
+     #define MA(key)  LS(LC(LA(key))
+     #define MAH      LS(LC(LALT))
      #define MH(key)  LS(LA(LG(key))
      #define MHA      LS(LA(LGUI))
 
@@ -42,19 +44,19 @@
     default_layer {
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &kp ESC                                                         &mo 3     &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &kp MHA                                                         &kp PG_UP &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp LALT  &kp A     &kp S    &kp D    &kp F      &kp G  &kp HYPER       &kp LGUI &kp LCTRL &kp RCTRL  &kp RGUI          &kp PG_DN &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME  &kp MHA                               &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END   &kp HYPER &kp ENTER &kp SPACE                &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &kp HOME                                                        &kp PG_UP &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
+        &kp LALT  &kp A     &kp S    &kp D    &kp F      &kp G  &kp END         &kp LGUI &kp LCTRL &kp RCTRL  &kp RGUI          &kp PG_DN &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp MEH  &kp MHA                               &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp MAH  &kp HYPER &kp ENTER &kp SPACE                &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
       >;
     };
     keypad {
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &kp ESC                                                          &mo 3     &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &kp PG_UP &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
-        &kp LALT  &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp RCTL  &kp RGUI            &kp PG_DN &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp MHA                                 &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp HYPER &kp ENTER &kp KP_N0                  &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &kp HOME                                                         &kp PG_UP &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
+        &kp LALT  &kp A     &kp S    &kp D    &kp F      &kp G  &kp END         &kp LCTRL &kp LALT &kp RCTRL &kp RGUI            &kp PG_DN &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp MEH  &kp MHA                                 &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp MAH  &kp HYPER &kp ENTER &kp KP_N0                  &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
       >;
     };
     fn {
