@@ -9,7 +9,7 @@ SELINUX1 := :z
 SELINUX2 := ,z
 endif
 
-.PHONY: all left clean_firmware clean_image clean berlin us
+.PHONY: all left clean_firmware clean_image clean berlin us upstream
 
 berlin:
 	cp config/boards/arm/adv360/locations/Kconfig-berlin.defconfig config/boards/arm/adv360/Kconfig.defconfig 
@@ -20,6 +20,10 @@ us:
 	cp config/boards/arm/adv360/locations/Kconfig-us.defconfig config/boards/arm/adv360/Kconfig.defconfig 
 	make all
 	cp config/boards/arm/adv360/locations/Kconfig.defconfig config/boards/arm/adv360/Kconfig.defconfig 	        
+
+# Sets upstream for a newly cloned repo
+upstream:
+	git remote add upstream git@github.com:KinesisCorporation/Adv360-Pro-ZMK.git
 
 all:
 	$(shell bin/get_version.sh >> /dev/null)
