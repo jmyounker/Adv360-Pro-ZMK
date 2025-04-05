@@ -9,17 +9,20 @@ SELINUX1 := :z
 SELINUX2 := ,z
 endif
 
-.PHONY: all left clean_firmware clean_image clean berlin us upstream
+.PHONY: all left clean_firmware clean_image clean berlin us upstream home work
 
-berlin:
-	cp config/boards/arm/adv360/locations/Kconfig-berlin.defconfig config/boards/arm/adv360/Kconfig.defconfig 
+home:
+	cp config/boards/arm/adv360/locations/Kconfig-home.defconfig config/boards/arm/adv360/Kconfig.defconfig
 	make all
-	cp config/boards/arm/adv360/locations/Kconfig.defconfig config/boards/arm/adv360/Kconfig.defconfig 
+	cp config/boards/arm/adv360/locations/Kconfig.defconfig config/boards/arm/adv360/Kconfig.defconfig
 
-us:
-	cp config/boards/arm/adv360/locations/Kconfig-us.defconfig config/boards/arm/adv360/Kconfig.defconfig 
+work:
+	cp config/boards/arm/adv360/locations/Kconfig-work.defconfig config/boards/arm/adv360/Kconfig.defconfig
 	make all
-	cp config/boards/arm/adv360/locations/Kconfig.defconfig config/boards/arm/adv360/Kconfig.defconfig 	        
+	cp config/boards/arm/adv360/locations/Kconfig.defconfig config/boards/arm/adv360/Kconfig.defconfig
+
+restore_config:
+	cp config/boards/arm/adv360/locations/Kconfig.defconfig config/boards/arm/adv360/Kconfig.defconfig
 
 # Sets upstream for a newly cloned repo
 upstream:
@@ -55,4 +58,4 @@ clean_firmware:
 clean_image:
 	$(DOCKER) image rm zmk docker.io/zmkfirmware/zmk-build-arm:stable
 
-clean: clean_firmware clean_image
+clean: restore_config clean_firmware clean_image
