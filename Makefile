@@ -29,7 +29,7 @@ upstream:
 	git remote add upstream git@github.com:KinesisCorporation/Adv360-Pro-ZMK.git
 
 all:
-	$(shell bin/get_version.sh >> /dev/null)
+	$(shell bin/get_version_local.sh clique >> /dev/null)
 	$(DOCKER) build --tag zmk --file Dockerfile .
 	$(DOCKER) run --rm -it --name zmk \
 		-v $(PWD)/firmware:/app/firmware$(SELINUX1) \
@@ -41,7 +41,7 @@ all:
 	git checkout config/version.dtsi
 
 left:
-	$(shell bin/get_version.sh >> /dev/null)
+	$(shell bin/get_version_local.sh clique >> /dev/null)
 	$(DOCKER) build --tag zmk --file Dockerfile .
 	$(DOCKER) run --rm -it --name zmk \
 		-v $(PWD)/firmware:/app/firmware$(SELINUX1) \
