@@ -1,5 +1,37 @@
 # Kinesis Advantage 360 Pro ZMK Config
 
+## My Modifications
+
+I have two keyboards. There are two targets, one for each keyboard. These use
+variant config files. There are make targets for each.
+
+### Build targets
+
+* `make home`
+* `make work`
+
+
+### Cleaning up
+
+The build targets replace the config file with an appropriately modified one, and
+then restore the config file afterwards. It's possible that the process will
+explode. You can put the default config file back in place using either of:
+ 
+* `make restore_config`
+* `make clean`
+
+The `restore_config` target just restores the config file, while `clean` does
+the full shebang.
+
+
+### Updating from Kinesis
+
+* `make upgrade`
+
+This triggers a rebase, which will invariably have a bunch of conflicts.
+
+
+
 ## Modifying the keymap
 
 [The ZMK documentation](https://zmk.dev/docs) covers both basic and advanced functionality and has a table of OS compatibility for keycodes. Please note that the RGB Underglow, Backlight and Power Management sections are not relevant to the Advantage 360 Pro's custom ZMK fork. For more information see [this note](#note)

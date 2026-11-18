@@ -24,6 +24,10 @@ work:
 restore_config:
 	cp config/boards/arm/adv360/locations/Kconfig.defconfig config/boards/arm/adv360/Kconfig.defconfig
 
+update:
+	git fetch upstream && git rebase V3.0
+	
+
 # Sets upstream for a newly cloned repo
 upstream:
 	git remote add upstream git@github.com:KinesisCorporation/Adv360-Pro-ZMK.git
